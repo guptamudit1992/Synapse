@@ -62,8 +62,9 @@ module.exports = {
 			}
 
 			// Compare password from the form params to the encrypted password of the user found.
-			if(req.param('password') == user.password) {
-				if (err) return next(err);
+			if(req.param('password') === user.password && req.param('access') === user.access) {
+				if (err) 
+					return res.redirect('/session/login');
 
 				// Log user in
 				req.session.authenticated = true;
@@ -72,7 +73,8 @@ module.exports = {
 				// Change status to online
 				user.online = true;
 				user.save(function(err, user) {
-					if (err) return next(err);
+					if (err) 
+						return res.redirect('/session/login');
 
 					// Inform other sockets (e.g. connected sockets that are subscribed) that this user is now logged in
 					/*Users.publishUpdate(user.id, {
@@ -88,54 +90,30 @@ module.exports = {
 						res.redirect('/users');
 						return;
 					} else if (req.param('access') == "Student") {
-						res.redirect('/feedback');
+						res.redirect('/feedback/index');
 						return;
 					} else {
-						res.redirect('/dashboard');
+						res.redirect('/dashboard/index');
 						return;
 					}
 
 					//Redirect to their profile page (e.g. /views/user/show.ejs)
 					//res.redirect('/users/show/' + user.id);
 				});
-			}
-		});
-	},
-
-	destroy: function(req, res, next) {
-
-		User.findOne(req.session.User.id, function foundUser(err, user) {
-
-			var userId = req.session.User.id;
-
-			if (user) {
-				// The user is "logging out" (e.g. destroying the session) so change the online attribute to false.
-				User.update(userId, {
-					online: false
-				}, function(err) {
-					if (err) return next(err);
-
-					// Inform other sockets (e.g. connected sockets that are subscribed) that the session for this user has ended.
-					User.publishUpdate(userId, {
-						loggedIn: false,
-						id: userId,
-						name: user.name,
-						action: ' has logged out.'
-					});
-
-					// Wipe out the session (log out)
-					req.session.destroy();
-
-					// Redirect the browser to the sign-in screen
-					res.redirect('/session/login');
-				});
 			} else {
 
-				// Wipe out the session (log out)
-				req.session.destroy();
+			var passwordIncorretdError = [{
+				name: 'passwordIncorretdError',
+				message: 'Your password is incorrect'
+			}]
 
-				// Redirect the browser to the sign-in screen
-				res.redirect('/session/login');
+			// Remember that err is the object being passed down (a.k.a. flash.err), whose value is another object with
+			// the key of passwordIncorretdError
+			req.session.flash = {
+				err: passwordIncorretdError
+			}
+
+				return res.redirect('/session/login');
 			}
 		});
 	}

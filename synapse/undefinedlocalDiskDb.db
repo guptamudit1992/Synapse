@@ -50,10 +50,29 @@
         "password": "1234",
         "access": "Admin",
         "createdAt": "2017-07-23T21:45:28.528Z",
-        "updatedAt": "2017-07-23T21:56:54.406Z",
+        "updatedAt": "2017-07-23T22:07:58.744Z",
         "id": 6
+      },
+      {
+        "name": "Mudit Gupta",
+        "email": "m@gmail.com",
+        "password": "1234",
+        "access": "Professor",
+        "createdAt": "2017-07-23T22:13:41.393Z",
+        "updatedAt": "2017-07-23T22:26:52.087Z",
+        "id": 7
+      },
+      {
+        "name": "Niharika Sharma",
+        "email": "n@gmail.com",
+        "password": "1234",
+        "access": "Student",
+        "createdAt": "2017-07-23T22:14:01.925Z",
+        "updatedAt": "2017-07-23T22:30:59.200Z",
+        "id": 8
       }
-    ]
+    ],
+    "feedback": []
   },
   "schema": {
     "mockapi": {
@@ -93,12 +112,27 @@
       "updatedAt": {
         "type": "datetime"
       }
+    },
+    "feedback": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
     }
   },
   "counters": {
     "mockapi": {},
     "users": {
-      "id": 6
-    }
+      "id": 8
+    },
+    "feedback": {}
   }
 }

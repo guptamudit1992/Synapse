@@ -1,13 +1,16 @@
 <div class="container">
 
-	<div class="alert alert-success"><b>Database</b></div>
+	<div class="alert alert-success">Database</div>
+
+	<div class="alert"><a href="/users/signup" class="btn btn-sm btn-primary">Create New Users</a></div>
+
 	<table class="table">
 		<tr>
 			<th> ID </th>
 			<th> Name </th>
 			<th> Email </th>
 			<th> Access	</th>
-			<th></th>
+			<!--th></th-->
 			<th></th>
 			<th></th> 
 		</tr>
@@ -19,8 +22,8 @@
 				<td><%= user.email %></td>
 				<td><%= user.access %></td>
 
-				<td><a href="#" class="btn btn-sm btn-primary">Show</a></td>
-				<td><a href="#" class="btn btn-sm btn-warning">Edit</a></td>
+				<!--td><a href="#" class="btn btn-sm btn-primary">Show</a></td-->
+				<td><a href="#" class="btn btn-sm btn-warning">Edit Profile</a></td>
 				<td><a href="#" class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
 		<% }) %>
