@@ -1,8 +1,6 @@
 <div class="container" style="width: 500px">
 	<div class="jumbotron">
-		<form action="/users/create" method="POST" class="form-signin">
-
-			<div class="alert">Account Credentials</div>
+		<form action="/session/create" method="POST" class="form-signin">
 
 			<% if(flash && flash.err) { %>
 				<div class="alert alert-danger">Error! Please check the credentials again</div>
@@ -12,12 +10,8 @@
 					<% }) %>
 				</ul-->
 			<% } %>
-
-			<!-- Name -->
-			<div class="input-group">
-		  		<span class="input-group-addon">Name</span>
-		  		<input type="text" class="form-control" name="name">
-			</div>
+		
+			<div class="alert">Account Credentials</div>
 
 			<!-- Email -->
 			<div class="input-group">
@@ -42,7 +36,7 @@
 			  	</select>
 			</div>
 
-			<input type="submit" class="btn btn-md btn-danger btn-block" value="Create Account">
+			<input type="submit" class="btn btn-md btn-danger btn-block" value="Log into account">
 			<input type="hidden" name="_csrf" value="<%= _csrf %>" />
 		</form>
 	</div>
