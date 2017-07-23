@@ -34,7 +34,15 @@ module.exports.routes = {
 
   '/': {
     view: 'static/index'
-  }
+  },
+
+
+  /*Signup 
+  '/users/signup': {
+    controllers: 'UsersController',
+    action: 'signup'
+  }*/
+
 
   /***************************************************************************
   *                                                                          *

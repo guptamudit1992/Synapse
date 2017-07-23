@@ -1,0 +1,48 @@
+
+<div class="container" style="width: 500px">
+	<div class="jumbotron">
+		<form action="/users/create" method="POST" class="form-signin">
+
+			<% if(flash && flash.err) { %>
+				<div class="alert alert-danger">Error! Please check the credentials again</div>
+				<!--ul class="alert alert-danger">
+					<% Object.keys(flash.err).forEach(function(error) { %>
+						<li><%- JSON.stringify(flash.err[error]) %></li>
+					<% }) %>
+				</ul-->
+			<% } %>
+
+			<!-- Name -->
+			<div class="input-group">
+		  		<span class="input-group-addon">Name</span>
+		  		<input type="text" class="form-control" name="name">
+			</div>
+
+			<!-- Email -->
+			<div class="input-group">
+		  		<span class="input-group-addon">Email</span>
+		  		<input type="text" class="form-control" name="email">
+			</div>
+
+			<!-- Password -->
+			<div class="input-group">
+		  		<span class="input-group-addon">Password</span>
+		  		<input type="password" class="form-control" name="password">
+			</div>
+
+	
+			<!-- Access -->
+			<div class="input-group">
+		  		<label class="label label-info">Select Access Control:</label>
+		  		<select class="form-control" id="access" style="margin-top: 10px;">
+		    		<option value="admin">Admin</option>
+				    <option value="student">Student</option>
+				    <option value="professor">Professor</option>
+			  	</select>
+			</div>
+
+			<input type="submit" class="btn btn-sm btn-primary btn-block" value="Create Account">
+			<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+		</form>
+	</div>
+</div>

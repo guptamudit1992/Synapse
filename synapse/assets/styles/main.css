@@ -1,3 +1,11 @@
 .navbar {
 	border-radius: 0px !important;
 }
+
+.form-signin .input-group {
+	padding: 10px;
+}
+
+.form-signin .btn-block {
+	margin-top: 25px;
+}
