@@ -25,6 +25,15 @@
         "createdAt": "2017-07-23T20:21:08.009Z",
         "updatedAt": "2017-07-23T20:21:08.009Z",
         "id": 3
+      },
+      {
+        "name": "Mayank Tyagi",
+        "email": "mayank@gmail.com",
+        "password": "sgfdbff",
+        "access": "student",
+        "createdAt": "2017-07-23T20:47:02.846Z",
+        "updatedAt": "2017-07-23T20:47:02.846Z",
+        "id": 4
       }
     ]
   },
@@ -71,7 +80,7 @@
   "counters": {
     "mockapi": {},
     "users": {
-      "id": 3
+      "id": 4
     }
   }
 }
