@@ -1,0 +1,77 @@
+{
+  "data": {
+    "mockapi": [],
+    "users": [
+      {
+        "name": "Mudit Gupta",
+        "email": "bonn@gn.com",
+        "password": "vskb ",
+        "createdAt": "2017-07-23T20:04:20.028Z",
+        "updatedAt": "2017-07-23T20:04:20.028Z",
+        "id": 1
+      },
+      {
+        "name": "Niharika Sharma",
+        "email": "niharika@gmail.com",
+        "password": "32455y",
+        "createdAt": "2017-07-23T20:20:32.180Z",
+        "updatedAt": "2017-07-23T20:20:32.180Z",
+        "id": 2
+      },
+      {
+        "name": "Arjun Gambhir",
+        "email": "arjun@gmail.com",
+        "password": "2344tergf",
+        "createdAt": "2017-07-23T20:21:08.009Z",
+        "updatedAt": "2017-07-23T20:21:08.009Z",
+        "id": 3
+      }
+    ]
+  },
+  "schema": {
+    "mockapi": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "users": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "mockapi": {},
+    "users": {
+      "id": 3
+    }
+  }
+}
