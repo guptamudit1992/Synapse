@@ -1,0 +1,132 @@
+<div class="container">
+
+	<!-- Feedback Form -->
+	<div class="jumbotron">
+		<form action="/feedback/create" method="POST" class="form-signin">
+
+			<% if(flash && flash.err) { %>
+				<div class="alert alert-danger">Error! Please check the form again</div>
+				<!--ul class="alert alert-danger">
+					<% Object.keys(flash.err).forEach(function(error) { %>
+						<li><%- JSON.stringify(flash.err[error]) %></li>
+					<% }) %>
+				</ul-->
+			<% } %>
+		
+			<div class="alert alert-info">Standardized Faculty Evaluation Questions</div>
+
+			<div class="input-group alert">
+		  		1. Description of course objectives and assignments:
+		  			<div class="block" name="description">
+			  			<input type="radio" name="description" value="Poor" checked> Poor
+					  	<input type="radio" name="description" value="Fair"> Fair 
+					  	<input type="radio" name="description" value="Good"> Good 
+					  	<input type="radio" name="description" value="Very Good"> Very Good
+					  	<input type="radio" name="description" value="Excellent"> Excellent  
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		2. Communication of ideas and information:
+		  			<div class="block" name="communication">
+			  			<input type="radio" name="communication" value="Poor" checked> Poor
+					  	<input type="radio" name="communication" value="Fair"> Fair 
+					  	<input type="radio" name="communication" value="Good"> Good 
+					  	<input type="radio" name="communication" value="Very Good"> Very Good
+					  	<input type="radio" name="communication" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		3. Expressison of expectations of performance:
+		  			<div class="block" name="expression">
+			  			<input type="radio" name="expression" value="Poor" checked> Poor
+					  	<input type="radio" name="expression" value="Fair"> Fair 
+					  	<input type="radio" name="expression" value="Good"> Good 
+					  	<input type="radio" name="expression" value="Very Good"> Very Good
+					  	<input type="radio" name="expression" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		4. Availability to assist students in or out of class:
+		  			<div class="block" name="availability">
+			  			<input type="radio" name="availability" value="Poor" checked> Poor
+					  	<input type="radio" name="availability" value="Fair"> Fair 
+					  	<input type="radio" name="availability" value="Good"> Good 
+					  	<input type="radio" name="availability" value="Very Good"> Very Good
+					  	<input type="radio" name="availability" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		5. Respect and concern for students:
+		  			<div class="block" name="respect">
+			  			<input type="radio" name="respect" value="Poor" checked> Poor
+					  	<input type="radio" name="respect" value="Fair"> Fair 
+					  	<input type="radio" name="respect" value="Good"> Good 
+					  	<input type="radio" name="respect" value="Very Good"> Very Good
+					  	<input type="radio" name="respect" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		6. Stimulation of interest in course:
+		  			<div class="block" name="stimulation">
+			  			<input type="radio" name="stimulation" value="Poor" checked> Poor
+					  	<input type="radio" name="stimulation" value="Fair"> Fair 
+					  	<input type="radio" name="stimulation" value="Good"> Good 
+					  	<input type="radio" name="stimulation" value="Very Good"> Very Good
+					  	<input type="radio" name="stimulation" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		7. Facilitation of learning:
+		  			<div class="block" name="facilitation">
+			  			<input type="radio" name="facilitation" value="Poor" checked> Poor
+					  	<input type="radio" name="facilitation" value="Fair"> Fair 
+					  	<input type="radio" name="facilitation" value="Good"> Good 
+					  	<input type="radio" name="facilitation" value="Very Good"> Very Good
+					  	<input type="radio" name="facilitation" value="Excellent"> Excellent  
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		8. Enthusiasm for the subject:
+		  			<div class="block" name="enthusiasm">
+			  			<input type="radio" name="enthusiasm" value="Poor" checked> Poor
+					  	<input type="radio" name="enthusiasm" value="Fair"> Fair 
+					  	<input type="radio" name="enthusiasm" value="Good"> Good 
+					  	<input type="radio" name="enthusiasm" value="Very Good"> Very Good
+					  	<input type="radio" name="enthusiasm" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		9. Encouraged students to think independently, creatively and critically:
+		  			<div class="block" name="encouragemnt">
+			  			<input type="radio" name="encouragemnt" value="Poor" checked> Poor
+					  	<input type="radio" name="encouragemnt" value="Fair"> Fair 
+					  	<input type="radio" name="encouragemnt" value="Good"> Good 
+					  	<input type="radio" name="encouragemnt" value="Very Good"> Very Good
+					  	<input type="radio" name="encouragemnt" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<div class="input-group alert">
+		  		10. Overall rating of the instructor:
+		  			<div class="block" name="overall">
+			  			<input type="radio" name="overall" value="Poor" checked> Poor
+					  	<input type="radio" name="overall" value="Fair"> Fair 
+					  	<input type="radio" name="overall" value="Good"> Good 
+					  	<input type="radio" name="overall" value="Very Good"> Very Good
+					  	<input type="radio" name="overall" value="Excellent"> Excellent 
+					</div>
+			</div>
+
+			<input type="submit" class="btn btn-md btn-danger pull-right" value="Submit Feeback">
+			<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+		</form>
+	</div>
+</div>

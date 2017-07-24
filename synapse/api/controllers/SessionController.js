@@ -90,7 +90,7 @@ module.exports = {
 						res.redirect('/users');
 						return;
 					} else if (req.param('access') == "Student") {
-						res.redirect('/feedback/index');
+						res.redirect('/feedback/dashboard');
 						return;
 					} else {
 						res.redirect('/dashboard/index');
